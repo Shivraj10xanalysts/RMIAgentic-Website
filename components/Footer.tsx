@@ -1,0 +1,18 @@
+import Link from 'next/link';
+import Logo from './Logo';
+
+export default function Footer() {
+  return (
+    <footer className="site-foot">
+      <div className="wrap">
+        <div className="sf-cols">
+          <div className="sf-brand"><Logo light /><p>Insurance for AI agents that move money.</p></div>
+          <nav aria-label="Product"><h3>Product</h3><Link href="/product">Insurance</Link><Link href="/product#rate">Rate</Link><Link href="/product#monitor">Monitor</Link></nav>
+          <nav aria-label="Company"><h3>Company</h3><a href="#">[Careers]</a><Link href="/contact">Contact</Link></nav>
+          <nav aria-label="Resources"><h3>Resources</h3><Link href="/product#faq">FAQs</Link><a href="#">[Trust Score report]</a><a href="#">[Privacy]</a></nav>
+        </div>
+        <p className="sf-legal">© 2026 RMI Agentic · [Terms] · [Privacy]</p>
+      </div>
+    </footer>
+  );
+}
