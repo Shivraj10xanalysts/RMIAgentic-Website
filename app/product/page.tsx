@@ -3,6 +3,7 @@ import RateDemo from '@/components/RateDemo';
 import MonitorDemo from '@/components/MonitorDemo';
 import HowItWorks from '@/components/HowItWorks';
 import Link from 'next/link';
+import { CheckIcon } from '@/components/Icons';
 
 export const metadata = { title: 'Product — RMI Agentic' };
 
@@ -32,7 +33,7 @@ export default function Product() {
                     <span className="lc-th"><svg viewBox="0 0 28 32"><path d="M14 1.5 26 5.5V15c0 7.6-5.2 13.2-12 15.8C7.2 28.2 2 22.6 2 15V5.5Z" fill="#4F46E5" /><path d="M9 16l3.5 3.5L19 12" fill="none" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
                     <b className="lc-green">Policy · checkout concierge</b>
                   </div>
-                  <span className="lc-pill ok">COVERED</span>
+                  <span className="lc-pill ok"><CheckIcon />COVERED</span>
                 </div>
                 <p className="lc-sum">$2.77 per $10,000 covered</p>
                 <div className="lc-kv">
@@ -40,7 +41,7 @@ export default function Product() {
                   <span>Cover</span><b>Standard</b>
                   <span>Per-txn cap</span><b>$5,000</b>
                   <span>Monitoring</span><b>Live</b>
-                  <span>Claim #48213</span><b className="g">Paid · liability $0</b>
+                  <span>Claim #48213</span><b className="g"><CheckIcon />Paid · liability $0</b>
                 </div>
               </div>
             </div>

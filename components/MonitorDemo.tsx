@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { CheckIcon, DotIcon, FlagIcon } from './Icons';
 import { prefersReducedMotion, useInView } from '@/lib/useInView';
 
 const P: [string, string, boolean][] = [
@@ -39,12 +40,12 @@ export default function MonitorDemo() {
             <span className="lc-th"><svg viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="1.8" strokeLinecap="round"><circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="2.5" fill="#4F46E5" /></svg></span>
             <b>Live payments<br />checkout concierge</b>
           </div>
-          <span className={`lc-pill ${alerted ? 'bad' : 'ok blink'}`}>{alerted ? 'ALERTED' : 'MONITORING'}</span>
+          <span className={`lc-pill ${alerted ? 'bad' : 'ok blink'}`}>{alerted ? <FlagIcon /> : <DotIcon blink />}{alerted ? 'ALERTED' : 'MONITORING'}</span>
         </div>
         <p className="lc-sum">{alerted ? 'Agent builder alerted' : 'Watching every payment'}</p>
         <div className="lc-kv lc-feed">
           {rows.map((r, i) => (
-            <div key={i} className="lc-row"><span>{r[0]} · {r[1]}</span><b className={r[2] ? 'r' : 'g'}>{r[2] ? 'Alerted' : 'Cleared'}</b></div>
+            <div key={i} className="lc-row"><span>{r[0]} · {r[1]}</span><b className={r[2] ? 'r' : 'g'}>{r[2] ? <FlagIcon /> : <CheckIcon />}{r[2] ? 'Alerted' : 'Cleared'}</b></div>
           ))}
         </div>
       </div>

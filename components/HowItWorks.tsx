@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Reveal from './Reveal';
+import { CheckIcon } from './Icons';
 import SandboxCanvas from './SandboxCanvas';
 import { prefersReducedMotion, useInView } from '@/lib/useInView';
 
@@ -49,7 +50,7 @@ export default function HowItWorks() {
           <article className={`hw-card ${cards >= 1 ? 'on' : ''}`}>
             <h3><span className="hw-num">Step 1</span>Connect your agent</h3>
             <div className="hw-connect" role="img" aria-label="Your agent connected to the RMI adversarial sandbox, which contains a merchant, a payment network and an identity check">
-              <span className="lc-pill vi">CONNECTED</span>
+              <span className="lc-pill vi"><CheckIcon />CONNECTED</span>
               <SandboxCanvas />
             </div>
           </article>

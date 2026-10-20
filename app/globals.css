@@ -326,23 +326,19 @@ details p { margin: 0 0 20px; color: var(--body); max-width: 34em; }
 .lc-t b { font-size: 16px; font-weight: 600; line-height: 1.25; color: var(--ink); }
 .lc-t b.lc-green { color: var(--green); white-space: nowrap; }
 .lc-pill { flex: none; font-family: var(--mono); font-size: 11.5px; font-weight: 500; letter-spacing: .06em; color: var(--green); white-space: nowrap; }
-.lc-pill::before { display: inline-block; width: 1.1em; margin-right: 4px; text-align: center; font-family: var(--sans); font-weight: 600; }
-.lc-pill.ok::before, .lc-pill.vi::before { content: "¹3"; }
 .lc-pill.bad { color: var(--red); }
-.lc-pill.bad::before { content: "91"; }
-.lc-pill.ok.blink::before { content: "CF"; font-size: .8em; animation: lcbl 1.4s steps(1) infinite; }
 @keyframes lcbl { 50% { opacity: .2; } }
 .lc-sum { margin: 16px 0 12px; font-size: 15px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .lc-kv { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px 14px; font-family: var(--mono); font-size: 13px; }
 .lc-kv span { color: var(--muted); }
 .lc-kv b { font-weight: 500; color: var(--ink); font-variant-numeric: tabular-nums; }
-.lc-kv b.g { color: var(--green); } .lc-kv b.g::before { content: "¹3  "; white-space: pre; }
-.lc-kv b.r { color: var(--red); } .lc-kv b.r::before { content: "91  "; white-space: pre; }
+.lc-kv b.g { color: var(--green); }
+.lc-kv b.r { color: var(--red); }
 .lc-feed { display: block; min-height: 120px; }
 .lc-row { display: flex; justify-content: space-between; gap: 14px; padding: 8px 0; border-bottom: 1px solid var(--line); animation: mnin .45s cubic-bezier(.16, 1, .3, 1) both; }
 .lc-row span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .mon-viz .viz { padding: clamp(18px, 2.4vw, 30px); }
-@media (prefers-reduced-motion: reduce) { .lc-pill.ok.blink::before, .lc-row { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .ico-blink, .lc-row { animation: none; } }
 @media (max-width: 600px) { .lc-kv { font-size: 12.5px; } .lc-row span { white-space: normal; } }
 
 /* how it works (final) */
@@ -376,3 +372,9 @@ details p { margin-bottom: 16px; }
 .cv-ok { margin-top: 14px; font-size: 15px; color: var(--green); }
 .cv-legal { margin-top: 16px; font-size: 13px; color: var(--muted); }
 .cv-legal a { color: var(--green); }
+
+.ico { display: inline-block; width: 1em; height: 1em; margin-right: 6px; vertical-align: -.14em; }
+.ico-blink { animation: lcbl 1.4s steps(1) infinite; }
+.lc-pill { display: inline-flex; align-items: center; }
+.lc-kv b { display: inline-flex; align-items: center; justify-content: flex-end; }
+.lc-kv b.g, .lc-kv b.r { gap: 0; }
